@@ -4,8 +4,10 @@ const textSpan = document.querySelector('#text');
 
 
 inputEl.addEventListener('input', onInput);
-function onInput(event) {
-    textSpan.style.fontSize = event.currentTarget.value + "px";
+function onInput() {
+//     textSpan.style.fontSize = event.currentTarget.value + "px";
+    textSpan.style.fontSize = inputEl.value + "px";
+    
 }
 
 

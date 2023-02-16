@@ -16,22 +16,13 @@ const images = [
 const imageItem = document.querySelector('.gallery');
 
 
+const elements = images.map(({url, alt}) => 
+  `<li><img src ="${url}" alt = "${alt}"width = 800 
+  height = 600></img></li>`).join('');
 
-const elements = images.map(option => {
-const creatLi = document.createElement('li');
-const imageCreate = document.createElement('img');
-imageCreate.src = option.url;
-imageCreate.alt = option.alt;
-imageCreate.width = 800;
-imageCreate.classList.add('flex');
+imageItem.insertAdjacentHTML('beforeend', elements);
 
-creatLi.appendChild(imageCreate);
+imageItem.style.display = "flex";
 
-return creatLi;
-
-});
-
-imageItem.append(...elements);
-imageItem.style.display = 'flex';
-imageItem.style.justifyContent = 'space-around';
+imageItem.style.justifyContent = "space-around";
 
